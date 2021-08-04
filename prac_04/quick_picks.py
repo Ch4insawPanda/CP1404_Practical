@@ -1,15 +1,15 @@
 MINVALUE = 1  # Minimum value of number generated
 MAXVALUE = 45  # Maximum value of number generated
-NUMBEROFPICKS = 6
+NUMBEROFPICKS = 6  # Total numbers per line
 
 number_of_lines = int(input("Enter Number of Quick Picks :"))
-import random
+
 
 for lines in range(number_of_lines):
-    pick_list = [random.randint(MINVALUE, MAXVALUE) for i in range(NUMBEROFPICKS)]
-    for number in range(NUMBEROFPICKS):
-        while number in pick_list:
-            pick_list.remove(number)
-            random_number = random.randint(MINVALUE, MAXVALUE)
-            pick_list.append(random_number)
-    print(pick_list)
+    import random
+    picks_list = []
+    while len(picks_list) != NUMBEROFPICKS:
+        random_number = random.randint(MINVALUE, MAXVALUE)
+        if random_number not in picks_list:
+            picks_list.append(random_number)
+    print(picks_list)
