@@ -9,6 +9,11 @@ data_lists=[]
 
 def main():
     get_data()
+    display_data()
+
+
+def display_data():
+    '''Display the data read from the file.'''
     for current_list in data_lists:
         print('{} is taught by {} and has {} students.'.format(current_list[0], current_list[1], current_list[2]))
 
