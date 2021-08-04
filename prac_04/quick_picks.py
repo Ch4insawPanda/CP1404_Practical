@@ -1,7 +1,6 @@
 MINVALUE = 1  # Minimum value of number generated
 MAXVALUE = 45  # Maximum value of number generated
 NUMBEROFPICKS = 6
-numbers_list = []
 
 number_of_lines = int(input("Enter Number of Quick Picks :"))
 import random
