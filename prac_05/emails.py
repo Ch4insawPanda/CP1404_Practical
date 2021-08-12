@@ -2,22 +2,28 @@ def main():
     email_to_name = {}
     user_email = input("Enter Email :")
     while user_email != '':
-        user_name = get_user_name(user_email)
-        is_name = input('Is {} your name? (Y/n) :'.format(user_name)).lower()
-        while is_name != 'y' and is_name != 'n':
-            print('Error: Invalid Input')
-            is_name = input('Is {} your name? (Y/n) :'.format(user_name)).lower()
-        if is_name == 'y':
-            email_to_name[user_name] = user_email
-        else:
-            user_name = input('Enter Name :')
-            email_to_name[user_name] = user_email
-        user_email = input("Enter Email :")
+        user_email = get_user_name(email_to_name, user_email)
     for name, email in email_to_name.items():
         print('{} {}'.format(name, email))
 
 
-def get_user_name(user_email):
+def get_user_name(email_to_name, user_email):
+    """Check if the user email name is the same as the name and add to the dictionary"""
+    user_name = get_email_name(user_email)
+    is_name = input('Is {} your name? (Y/n) :'.format(user_name)).lower()
+    while is_name != 'y' and is_name != 'n':
+        print('Error: Invalid Input')
+        is_name = input('Is {} your name? (Y/n) :'.format(user_name)).lower()
+    if is_name == 'y':
+        email_to_name[user_name] = user_email
+    else:
+        user_name = input('Enter Name :')
+        email_to_name[user_name] = user_email
+    user_email = input("Enter Email :")
+    return user_email
+
+
+def get_email_name(user_email):
     """Get the user name from the email"""
     user_name = user_email.split('@')
     user_name = (user_name[0]).title()
