@@ -23,18 +23,16 @@ def get_guitar():
 
 def display_guitars():
     """Display all inputted guitars"""
-    index = 1
     if not guitar_list:
         print('I have no guitars')
     else:
         print('These are my guitars :')
-        for guitar in guitar_list:
+        for i, guitar in enumerate(guitar_list, 1):
             if guitar.is_vintage():
                 print(
-                    'Guitar {}: {} ({}), worth ${:.2f} (vintage)'.format(index, guitar.name, guitar.year, guitar.cost))
+                    'Guitar {}: {} ({}), worth ${:.2f} (vintage)'.format(i, guitar.name, guitar.year, guitar.cost))
             else:
-                print('Guitar {}: {} ({}), worth ${:.2f}'.format(index, guitar.name, guitar.year, guitar.cost))
-            index += 1
+                print('Guitar {}: {} ({}), worth ${:.2f}'.format(i, guitar.name, guitar.year, guitar.cost))
 
 
 if __name__ == '__main__':
