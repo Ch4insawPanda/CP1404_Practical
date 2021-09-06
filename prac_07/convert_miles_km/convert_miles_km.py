@@ -15,13 +15,13 @@ class MilesToKm(App):
         self.root = Builder.load_file('convert_miles_km.kv')
         return self.root
 
-    def get_value(self):
+    def validate_value(self):
         """Validate the value of the user input and return 0 if invalid."""
         if self.root.ids.miles_input.text == '':
             return 0.0
         else:
             try:
-                value = int(self.root.ids.miles_input.text)
+                value = float(self.root.ids.miles_input.text)
                 return value
             except ValueError:
                 return 0.0
