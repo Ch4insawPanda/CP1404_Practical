@@ -28,12 +28,13 @@ class MilesToKm(App):
 
     def handle_increment(self, integer):
         """Change the value of the input based on whether an increase or decrease is wanted."""
-        user_input = self.get_value()
+        user_input = self.validate_value()
         self.root.ids.miles_input.text = str(user_input + integer)
+        self.handle_calculate()
 
     def handle_calculate(self):
         """Convert the mile value into km value."""
-        m_value = self.get_value()
+        m_value = self.validate_value()
         km_value = m_value * MILES_TO_KM
         self.root.ids.km_output.text = str(km_value)
 
