@@ -12,7 +12,7 @@ class SilverServiceTaxi(Taxi):
 
     def get_fare(self):
         """Taxi fare multiplied by fanciness with the addition of a flagfall."""
-        return (super().get_fare() * self.fanciness) + self.flagfall
+        return super().get_fare() + self.flagfall
 
     def __str__(self):
         """Redo __str__ to display flagfall."""
