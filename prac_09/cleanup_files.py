@@ -25,6 +25,7 @@ def get_fixed_filename(filename):
     # Remove the .txt from the filename
     new_title = ''
     old_title = (filename.replace('.TXT', '.txt').replace('.txt', ''))
+    print(old_title)
     for index, char in enumerate(old_title):
         # Fix blank spaces into underscore.
         if char.isspace():
