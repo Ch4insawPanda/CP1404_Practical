@@ -12,6 +12,6 @@ while user_input != '':
         print('{} does not match any pages. Please try again'.format(user_input))
         user_input = input('Enter phrase or title to search: ')
     except wikipedia.DisambiguationError as e:
-        print( e.options)
+        print(e.options)
         user_input = input('Enter phrase or title to search: ')
 print('---Goodbye---')
